@@ -26,6 +26,16 @@ public class BowlingGameTest {
     }
 
     @Test
+    void should_return_score_when_level_is_ten_sore_pin(){
+        //given
+        Bowling bowling = new Bowling();
+        int[] strickBallOneTurn = {8,2,5};
+        //when
+        int result = bowling.inOneTurnScoreInTenthRound(strickBallOneTurn);
+        //Then
+        assertEquals(15,result);
+    }
+    @Test
     void should_return_score_when_level_is_ten_sore(){
         //given
         Bowling bowling = new Bowling();
