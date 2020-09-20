@@ -51,7 +51,9 @@ public class Bowling {
     }
     public int inAllTurnScore(int[] strickBallOneTurn){
         int score = 0;
-        if (strickBallOneTurn.length > 11) throw new IllegalArgumentException();
+        if (strickBallOneTurn.length > 21) throw new IllegalArgumentException();
+        if (strickBallOneTurn[18] < 10 && strickBallOneTurn[19] + strickBallOneTurn[18] <10
+                && strickBallOneTurn.length > 20) throw new IllegalArgumentException();
         for (int i = 0; i < strickBallOneTurn.length-1; i++) {
             if (strickBallOneTurn[i] > 10) throw new IllegalArgumentException();
             score = score +strickBallOneTurn[i];

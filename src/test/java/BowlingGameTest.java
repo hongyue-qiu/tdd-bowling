@@ -63,11 +63,23 @@ public class BowlingGameTest {
     void should_return_false_when_turn_more_than_11(){
         //given
         Bowling bowling = new Bowling();
-        int[] strickBallOneTurn = {11,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+        int[] strickBallOneTurn = {10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
         //whens
         //Then
         Assertions.assertThrows(IllegalArgumentException.class,()->{
             bowling.inAllTurnScore(strickBallOneTurn);
         });
     }
+    @Test
+    void should_return_false_when_turn_more_than_10_and_10th_strike_not_10(){
+        //given
+        Bowling bowling = new Bowling();
+        int[] strickBallOneTurn = {10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+        //whens
+        //Then
+        Assertions.assertThrows(IllegalArgumentException.class,()->{
+            bowling.inAllTurnScore(strickBallOneTurn);
+        });
+    }
+
 }
