@@ -33,7 +33,7 @@ public class BowlingGameTest {
         Bowling bowling = new Bowling();
         int[] strickBallOneTurn = {8,2,5};
         //when
-        int result = bowling.inOneTurnScoreInTenthRound(strickBallOneTurn);
+        int result = bowling.inOneTurnScoreInTentheRound(strickBallOneTurn);
         //Then
         assertEquals(15,result);
     }
@@ -43,7 +43,7 @@ public class BowlingGameTest {
         Bowling bowling = new Bowling();
         int[] strickBallOneTurn = {10,8,5};
         //when
-        int result = bowling.inOneTurnScoreInTenthRound(strickBallOneTurn);
+        int result = bowling.inOneTurnScoreInTentheRound(strickBallOneTurn);
         //Then
         assertEquals(23,result);
     }
@@ -98,9 +98,18 @@ public class BowlingGameTest {
         Bowling bowling = new Bowling();
         int[] strickBallOneTurn = {10,0,10,0,10,0,10,0,10,0,10,0,10,0,10,0,10,0,10,10,10};
         //when
-        int result = bowling.inOneTurnScoreInTenthRound(strickBallOneTurn);
+        int result = bowling.inAllTurnScore(strickBallOneTurn);
         //Then
         assertEquals(300,result);
     }
+//    void should_return_score_when_not_all_striked(){
+//        //given
+//        Bowling bowling = new Bowling();
+//        int[] strickBallOneTurn = {10,0,10,0,10,0,10,0,10,0,10,0,10,0,10,0,10,0,10,10,10};
+//        //when
+//        int result = bowling.inOneTurnScoreInTenthRound(strickBallOneTurn);
+//        //Then
+//        assertEquals(300,result);
+//    }
 
 }
