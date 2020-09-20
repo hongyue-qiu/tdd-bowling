@@ -82,6 +82,17 @@ public class BowlingGameTest {
         });
     }
     @Test
+    void should_return_false_when_one_turn_more_than_strike_10_ball(){
+        //given
+        Bowling bowling = new Bowling();
+        int[] strickBallOneTurn = {10,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+        //whens
+        //Then
+        Assertions.assertThrows(IllegalArgumentException.class,()->{
+            bowling.inAllTurnScore(strickBallOneTurn);
+        });
+    }
+    @Test
     void should_return_score_when_all_striked(){
         //given
         Bowling bowling = new Bowling();
