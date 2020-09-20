@@ -112,5 +112,16 @@ public class BowlingGameTest {
         //Then
         assertEquals(271,result);
     }
+    @Test
+    void should_return_score_when_not_striked(){
+        //given
+        Bowling bowling = new Bowling();
+        int[] strickBallOneTurn = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+        //when
+        int result = bowling.inAllTurnScore(strickBallOneTurn);
+        //Then
+        assertEquals(0,result);
+    }
+
 
 }
