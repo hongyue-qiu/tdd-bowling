@@ -81,5 +81,15 @@ public class BowlingGameTest {
             bowling.inAllTurnScore(strickBallOneTurn);
         });
     }
+    @Test
+    void should_return_score_when_all_striked(){
+        //given
+        Bowling bowling = new Bowling();
+        int[] strickBallOneTurn = {10,0,10,0,10,0,10,0,10,0,10,0,10,0,10,0,10,0,10,10,10};
+        //when
+        int result = bowling.inOneTurnScoreInTenthRound(strickBallOneTurn);
+        //Then
+        assertEquals(300,result);
+    }
 
 }
