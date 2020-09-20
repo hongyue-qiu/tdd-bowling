@@ -60,19 +60,9 @@ public class Bowling {
         if (strickBallOneTurn[18] < 10 && strickBallOneTurn[19] + strickBallOneTurn[18] < 10
                 && strickBallOneTurn.length > 20) throw new IllegalArgumentException();
         for (int i = 0; i < 18; i += 2) {
-            if (strickBallOneTurn[i] > 10) throw new IllegalArgumentException();
-            if (i % 2 == 0 && strickBallOneTurn[i] + strickBallOneTurn[i + 1] > 10)
+            if (strickBallOneTurn[i] > 10 ||strickBallOneTurn[i+1] > 10) throw new IllegalArgumentException();
+            if (strickBallOneTurn[i] + strickBallOneTurn[i + 1] > 10)
                 throw new IllegalArgumentException();
-//            if (i%2 == 0 &&
-//                    (strickBallOneTurn[i] == 10 || strickBallOneTurn[i] + strickBallOneTurn[i+1] == 10)){
-//                if (strickBallOneTurn[i+2] == 10) onTurnScore = 20 + strickBallOneTurn[i+3]+onTurnScore;
-//                onTurnScore = 10 + strickBallOneTurn[i+2]+ strickBallOneTurn[i+3]+onTurnScore;
-//            }else {
-//                onTurnScore =strickBallOneTurn[i] + strickBallOneTurn[i+1]+onTurnScore;
-//                i++;
-//            }
-//            onTurnScore =strickBallOneTurn[i] + strickBallOneTurn[i+1]+onTurnScore;
-//            i++;
             if (strickBallOneTurn[i] == 10) {
                 score = score + 10 + strickBallOneTurn[i + 2];
             }
