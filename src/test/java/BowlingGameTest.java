@@ -1,5 +1,7 @@
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BowlingGameTest {
@@ -44,5 +46,18 @@ public class BowlingGameTest {
         int result = bowling.inOneTurnScoreInTenthRound(strickBallOneTurn);
         //Then
         assertEquals(23,result);
+    }
+
+    @Test
+    void should_return_false_when_sore_more_than_10(){
+        //given
+        Bowling bowling = new Bowling();
+        int[] strickBallOneTurn = {11,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+        //when
+
+        //Then
+        Assertions.assertThrows(IllegalArgumentException.class,()->{
+            bowling.inAllTurnScore(strickBallOneTurn);
+        });
     }
 }

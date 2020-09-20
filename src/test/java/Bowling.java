@@ -47,9 +47,15 @@ public class Bowling {
     }
     public int inOneTurnScore(int[] strickBallOneTurn) {
         int soreOfOneTurn = getSoreOfOneTurn(strickBallOneTurn,0);
-
-
         return soreOfOneTurn;
+    }
+    public int inAllTurnScore(int[] strickBallOneTurn){
+        int score = 0;
+        for (int i = 0; i < strickBallOneTurn.length-1; i++) {
+            if (strickBallOneTurn[i] > 10) throw new IllegalArgumentException();
+            score = score +strickBallOneTurn[i];
+        }
+        return score;
     }
 
 }
